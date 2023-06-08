@@ -24,7 +24,7 @@ namespace DoDo.Open.AgingRole
 
         public override void Connected(string message)
         {
-            _openApiOptions.Log?.Invoke($"Connected: {message}");
+            _openApiOptions.Log?.Invoke($"连接状态: {message}");
 
             #region 时效身份组初始化
 
@@ -39,22 +39,22 @@ namespace DoDo.Open.AgingRole
 
         public override void Disconnected(string message)
         {
-            _openApiOptions.Log?.Invoke($"Disconnected: {message}");
+            _openApiOptions.Log?.Invoke($"断开连接: {message}");
         }
 
         public override void Reconnected(string message)
         {
-            _openApiOptions.Log?.Invoke($"Reconnected: {message}");
+            _openApiOptions.Log?.Invoke($"重新连接: {message}");
         }
 
         public override void Exception(string message)
         {
-            _openApiOptions.Log?.Invoke($"Exception: {message}");
+            _openApiOptions.Log?.Invoke($"异常: {message}");
         }
 
         public override void Received(string message)
         {
-            _openApiOptions.Log?.Invoke($"Received: {message}");
+            _openApiOptions.Log?.Invoke($"收到信息: {message}");
         }
 
         public override async void ChannelMessageEvent<T>(EventSubjectOutput<EventSubjectDataBusiness<EventBodyChannelMessage<T>>> input)
