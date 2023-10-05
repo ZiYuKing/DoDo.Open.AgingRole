@@ -28,7 +28,22 @@
         public string AdminDoDo3Id { get; set; }
 
         /// <summary>
-        /// 天卡配置
+        /// 管理员四DoDo号
+        /// </summary>
+        public string AdminDoDo4Id { get; set; }
+
+        /// <summary>
+        /// 管理员五DoDo号
+        /// </summary>
+        public string AdminDoDo5Id { get; set; }
+
+        /// <summary>
+        /// 管理员六DoDo号
+        /// </summary>
+        public string AdminDoDo6Id { get; set; }
+
+        /// <summary>
+        /// 日卡配置
         /// </summary>
         public DayCard DayCard { get; set; }
 
@@ -51,7 +66,7 @@
     public class DayCard
     {
         /// <summary>
-        /// 天卡指令
+        /// 日卡指令
         /// </summary>
         public string Command { get; set; }
     }
