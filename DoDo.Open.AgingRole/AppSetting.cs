@@ -63,6 +63,11 @@
         public MonthCard MonthCard { get; set; }
 
         /// <summary>
+        /// 年卡配置
+        /// </summary>
+        public YearCard YearCard { get; set; }
+
+        /// <summary>
         /// 查询配置
         /// </summary>
         public Query Query { get; set; }
@@ -88,6 +93,14 @@
     {
         /// <summary>
         /// 月卡指令
+        /// </summary>
+        public string Command { get; set; }
+    }
+
+    public class YearCard
+    {
+        /// <summary>
+        /// 年卡指令
         /// </summary>
         public string Command { get; set; }
     }
