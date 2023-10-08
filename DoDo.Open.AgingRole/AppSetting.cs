@@ -43,6 +43,11 @@
         public string AdminDoDo6Id { get; set; }
 
         /// <summary>
+        /// 管理员七DoDo号
+        /// </summary>
+        public string AdminDoDo7Id { get; set; }
+
+        /// <summary>
         /// 日卡配置
         /// </summary>
         public DayCard DayCard { get; set; }
