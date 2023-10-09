@@ -68,6 +68,11 @@
         public YearCard YearCard { get; set; }
 
         /// <summary>
+        /// 永久卡卡配置
+        /// </summary>
+        public PermanentCard PermanentCard { get; set; }
+
+        /// <summary>
         /// 查询配置
         /// </summary>
         public Query Query { get; set; }
@@ -101,6 +106,13 @@
     {
         /// <summary>
         /// 年卡指令
+        /// </summary>
+        public string Command { get; set; }
+    }
+    public class PermanentCard
+    {
+        /// <summary>
+        /// 永久卡指令
         /// </summary>
         public string Command { get; set; }
     }
