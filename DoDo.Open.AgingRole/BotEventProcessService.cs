@@ -75,11 +75,12 @@ namespace DoDo.Open.AgingRole
 
                     var dataPath = $"{Environment.CurrentDirectory}\\data\\{eventBody.IslandSourceId}.txt";
 
-                    if (Regex.IsMatch(content, _appSetting.WeekCard.Command) || Regex.IsMatch(content, _appSetting.MonthCard.Command) || Regex.IsMatch(content, _appSetting.DayCard.Command) || Regex.IsMatch(content, _appSetting.YearCard.Command) || Regex.IsMatch(content, _appSetting.PermanentCard.Command))
+                    if (Regex.IsMatch(content, _appSetting.WeekCard.Command) || Regex.IsMatch(content, _appSetting.MonthCard.Command) || Regex.IsMatch(content, _appSetting.DayCard.Command) || Regex.IsMatch(content, _appSetting.YearCard.Command) || Regex.IsMatch(content, _appSetting.PermanentCard.Command)
+                        || Regex.IsMatch(content, _appSetting.SeasonCard.Command))
                     {
                         var isAdmin = Regex.IsMatch(dodoId, _appSetting.AdminDoDoId) || Regex.IsMatch(dodoId, _appSetting.AdminDoDo2Id) || Regex.IsMatch(dodoId, _appSetting.AdminDoDo3Id) ||
                             Regex.IsMatch(dodoId, _appSetting.AdminDoDo4Id) || Regex.IsMatch(dodoId, _appSetting.AdminDoDo5Id) || Regex.IsMatch(dodoId, _appSetting.AdminDoDo6Id) ||
-                            Regex.IsMatch(dodoId, _appSetting.AdminDoDo7Id);
+                            Regex.IsMatch(dodoId, _appSetting.AdminDoDo7Id) || Regex.IsMatch(dodoId, _appSetting.AdminDoDo8Id) || Regex.IsMatch(dodoId, _appSetting.AdminDoDo9Id);
 
                         if (isAdmin)
                         {
@@ -103,6 +104,12 @@ namespace DoDo.Open.AgingRole
                             {
                                 day = 30;
                                 dayShow = "一个月";
+                                keyWord = @"^.*<@!(\d+)>(.*)$";
+                            }
+                            else if (Regex.IsMatch(content, _appSetting.SeasonCard.Command))
+                            {
+                                day = 90;
+                                dayShow = "三个月";
                                 keyWord = @"^.*<@!(\d+)>(.*)$";
                             }
                             else if (Regex.IsMatch(content, _appSetting.YearCard.Command))
@@ -212,7 +219,7 @@ namespace DoDo.Open.AgingRole
                         var targetDoDoId = regex.Groups[1].Value;
                         var isAdmin = Regex.IsMatch(dodoId, _appSetting.AdminDoDoId) || Regex.IsMatch(dodoId, _appSetting.AdminDoDo2Id) || Regex.IsMatch(dodoId, _appSetting.AdminDoDo3Id) ||
                             Regex.IsMatch(dodoId, _appSetting.AdminDoDo4Id) || Regex.IsMatch(dodoId, _appSetting.AdminDoDo5Id) || Regex.IsMatch(dodoId, _appSetting.AdminDoDo6Id) ||
-                            Regex.IsMatch(dodoId, _appSetting.AdminDoDo7Id);
+                            Regex.IsMatch(dodoId, _appSetting.AdminDoDo7Id) || Regex.IsMatch(dodoId, _appSetting.AdminDoDo8Id) || Regex.IsMatch(dodoId, _appSetting.AdminDoDo9Id);
                         if (!string.IsNullOrWhiteSpace(targetDoDoId))
                         {
                             var memberInfo = await _openApiService.GetMemberInfoAsync(new GetMemberInfoInput

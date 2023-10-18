@@ -48,6 +48,16 @@
         public string AdminDoDo7Id { get; set; }
 
         /// <summary>
+        /// 管理员八DoDo号
+        /// </summary>
+        public string AdminDoDo8Id { get; set; }
+
+        /// <summary>
+        /// 管理员九DoDo号
+        /// </summary>
+        public string AdminDoDo9Id { get; set; }
+
+        /// <summary>
         /// 日卡配置
         /// </summary>
         public DayCard DayCard { get; set; }
@@ -61,6 +71,11 @@
         /// 月卡配置
         /// </summary>
         public MonthCard MonthCard { get; set; }
+
+        /// <summary>
+        /// 季卡配置
+        /// </summary>
+        public MonthCard SeasonCard { get; set; }
 
         /// <summary>
         /// 年卡配置
