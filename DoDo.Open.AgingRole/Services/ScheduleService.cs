@@ -21,7 +21,7 @@ namespace DoDo.Open.AgingRole.Services
                 .Build();
             var roleTrigger = TriggerBuilder.Create()
                 .WithIdentity("CommonTrigger", "Common")
-                .WithCronSchedule("0 */10 * * * ?")
+                .WithCronSchedule("0 */10 * * * ?")//刷新时间
                 .Build();
             await scheduler.ScheduleJob(jobService, roleTrigger);
         }

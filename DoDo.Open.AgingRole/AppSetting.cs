@@ -13,6 +13,11 @@
         public string Token { get; set; }
 
         /// <summary>
+        /// 机器人响应频道ID
+        /// </summary>
+        public string ChannelId { get; set; }
+
+        /// <summary>
         /// 管理员一DoDo号
         /// </summary>
         public string AdminDoDoId { get; set; }

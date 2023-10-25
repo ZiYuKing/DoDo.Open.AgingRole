@@ -7,6 +7,7 @@ using DoDo.Open.Sdk.Models.Messages;
 using DoDo.Open.Sdk.Models.Roles;
 using DoDo.Open.Sdk.Services;
 
+
 namespace DoDo.Open.AgingRole
 {
     public class BotEventProcessService : EventProcessService
@@ -64,6 +65,7 @@ namespace DoDo.Open.AgingRole
                 var eventBody = input.Data.EventBody;
                 var dodoId = eventBody.DodoSourceId;
                 var nickName = eventBody.Member.NickName;
+                
 
                 if (eventBody.MessageBody is MessageBodyText messageBodyText)
                 {
@@ -271,7 +273,7 @@ namespace DoDo.Open.AgingRole
                     {
                         await _openApiService.SetChannelMessageSendAsync(new SetChannelMessageSendInput<MessageBodyText>
                         {
-                            ChannelId = eventBody.ChannelId,
+                            ChannelId = _appSetting.ChannelId,
                             MessageBody = new MessageBodyText
                             {
                                 Content = reply
